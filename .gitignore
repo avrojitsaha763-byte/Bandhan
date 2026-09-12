@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing and build output
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Debug and caches
+.npm-cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.turbo/
+.vercel/
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बंधन (Bandhan) — Made in India, For India | Soulmate Matchmaking & Event Companions</title>
+    <meta name="description" content="Bandhan is an inclusive Indian platform concept for soulmate discovery and respectful event companionship, with safety-first demo flows for profiles, matching and bookings.">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:title" content="बंधन (Bandhan) — Soulmate & Event Companion Platform">
+    <meta property="og:description" content="An inclusive India-first experience for meaningful connections and respectful event companionship.">
+    <meta property="og:type" content="website">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mode-all-active">
+    <!-- Header with Navbar -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#home" class="logo" id="brand-logo">
+                <span class="logo-icon">🪷</span>
+                <span class="logo-text">बंधन <small style="font-size: 0.85rem; font-weight: 600; color: #f59e0b; -webkit-text-fill-color: #f59e0b;">Bandhan</small></span>
+                <span class="badge-made-in-india">
+                    <span>🇮🇳</span> Made in India
+                </span>
+            </a>
+
+            <!-- Dual Mode Switcher Bar -->
+            <div class="mode-switch-wrapper" id="global-mode-switcher" role="group" aria-label="Platform Mode Switcher">
+                <button class="mode-btn active" id="btn-mode-all" onclick="switchGlobalMode('all')">
+                    ✨ All In One
+                </button>
+                <button class="mode-btn" id="btn-mode-soulmate" onclick="switchGlobalMode('soulmate')">
+                    💖 Saccha Saathi <small>(Soulmates)</small>
+                </button>
+                <button class="mode-btn" id="btn-mode-rental" onclick="switchGlobalMode('rental')">
+                    🎭 Event Saathi <small>(Rentals)</small>
+                </button>
+            </div>
+            
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#directory" class="nav-link">Find People</a></li>
+                    <li class="nav-item"><a href="#rishta-shield" class="nav-link">Rishta Shield 🛡️</a></li>
+                    <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li class="nav-item"><a href="#maryada" class="nav-link">Safety & Maryada</a></li>
+                    <li class="nav-item"><a href="#reviews" class="nav-link">Stories</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="booking-badge-btn" id="open-cart-btn" aria-label="View My Bookings & Matches">
+                    <span>🔔 My Connections</span>
+                    <span class="badge" id="cart-counter">0</span>
+                </button>
+                <a href="#directory" class="btn btn-primary btn-sm">Explore Profiles</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-pill">
+                        <span class="pulse-dot" style="background: #ff9933;"></span>
+                        100% Inclusive • Guy, Girl, Trans & Non-Binary • Demo Profiles
+                    </div>
+                    <h1 class="hero-title">
+                        Life Partner Chahiye Ya <br>
+                        <span class="gradient-text">Shaadi Ka Plus-One?</span>
+                    </h1>
+                    <p class="hero-description">
+                        Tired of intrusive relatives asking <em>"Shaadi kab karoge?"</em>, dreading third-wheel awkwardness at college reunions, or needing an articulate partner to impress your boss? Rent a dignified, verified event companion with an airtight backstory. <strong>Or</strong> find your genuine lifelong soulmate in India's most inclusive, judgment-free sanctuary.
+                    </p>
+
+                    <!-- Mode Quick Toggle Cards -->
+                    <div class="mode-banner">
+                        <div class="mode-banner-info">
+                            <h4 id="banner-mode-title">🌟 Dual-Purpose Indian Platform</h4>
+                            <p id="banner-mode-desc">Choose between finding genuine life partners or booking a respectful, verified companion for social prestige.</p>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            <button class="btn btn-sm btn-primary" onclick="switchGlobalMode('soulmate')">💖 Seek Soulmate</button>
+                            <button class="btn btn-sm btn-outline" onclick="switchGlobalMode('rental')">🎭 Rent Event Partner</button>
+                        </div>
+                    </div>
+
+                    <!-- Quick scenario selector tags -->
+                    <div class="scenario-pills">
+                        <span class="scenario-pill active" data-filter-category="all">🌟 All Profiles</span>
+                        <span class="scenario-pill" data-filter-category="shaadi">💍 Big Fat Shaadi / Sangeet</span>
+                        <span class="scenario-pill" data-filter-category="family">🛡️ Family Rishta Shield</span>
+                        <span class="scenario-pill" data-filter-category="reunion">🎓 College Reunion Pride</span>
+                        <span class="scenario-pill" data-filter-category="corporate">💼 Corporate & Boss Gala</span>
+                        <span class="scenario-pill" data-filter-category="trans-safe">🏳️‍⚧️ Trans & Queer Safe</span>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#directory" class="btn btn-primary btn-lg">Browse Indian Profiles</a>
+                        <a href="#rishta-shield" class="btn btn-outline btn-lg">Generate Rishta Alibi 🪄</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">28,500+</span>
+                            <span class="stat-label">Events & Matches</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.8%</span>
+                            <span class="stat-label">Relatives & Bosses Impressed</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Profile Verified (Demo) & Platonic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Showcase Card -->
+                <div class="hero-visual">
+                    <div class="visual-card-wrapper">
+                        <div class="glow-orb orb-1"></div>
+                        <div class="glow-orb orb-2"></div>
+                        
+                        <!-- Floating Glass Showcase Card -->
+                        <div class="glass-card">
+                            <div class="card-top-bar">
+                                <span class="badge-verified">🛡️ Demo Verified & Background Profile</span>
+                                <div class="price-inr"><span class="currency-symbol">₹</span>1,499 <small>/ event</small></div>
+                            </div>
+                            <div class="featured-avatar-box">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80" alt="Aarav Singhania - Featured Indian Companion" id="featured-hero-img">
+                                <div class="avatar-overlay-badge">
+                                    <span class="pulse-dot" style="background: #10b981;"></span> Available Across Bengaluru & Delhi NCR
+                                </div>
+                            </div>
+                            <div class="featured-info">
+                                <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.35rem; flex-wrap: wrap;">
+                                    <span class="identity-tag identity-man">👨 Man</span>
+                                    <span class="badge-occasion">💍 Shaadi Specialist</span>
+                                    <span class="badge-pride-friendly">🌈 Inclusive Ally</span>
+                                </div>
+                                <h3>Aarav Singhania, 28 <span>★ 4.99</span></h3>
+                                <p>AI Tech Founder (IIT/Indiranagar) • Impeccable Kurta & Sherwani collection • Speaks Hindi, English & Kannada • Handles tough Aunty questions effortlessly with gentle grace.</p>
+                                <div class="featured-traits">
+                                    <span class="trait-tag">💐 Touches Elders' Feet</span>
+                                    <span class="trait-tag">🕺 Sangeet Bhangra Pro</span>
+                                    <span class="trait-tag">👔 Boss Impression Expert</span>
+                                </div>
+                            </div>
+                            <div class="card-action-row">
+                                <button class="btn btn-primary" onclick="openBookingModalById('aarav')">Rent Aarav For Event</button>
+                                <button class="btn btn-outline btn-icon" onclick="openProfileModalById('aarav')" title="View Dossier">👁️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Directory Section (Companions & Soulmates) -->
+        <section class="directory-section" id="directory">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-eyebrow">भारत का पहला समावेशी मंच • Made in India For India</div>
+                    <h2 class="section-title">Verified Soulmates & Event Companions</h2>
+                    <p class="section-subtitle">Browse vetted individuals across all genders and orientations in India's top cities. 100% Identity Verification verified, educated, discreet, and respectful.</p>
+                </div>
+
+                <!-- Comprehensive Multi-Filter Bar -->
+                <div class="filter-bar">
+                    <!-- Search Box -->
+                    <div class="search-box" style="width: 100%; margin-bottom: 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="search-input" class="search-input" placeholder="Search by name, profession (Doctor, Tech, UPSC, CA, Designer), city, language (Hindi, Bengali, Tamil), or vibe...">
+                    </div>
+
+                    <!-- Filter Dropdowns Row -->
+                    <div class="search-and-sort" style="display: flex; gap: 0.75rem; flex-wrap: wrap; width: 100%;">
+                        <!-- Mode Filter -->
+                        <select id="filter-mode-select" class="sort-select" onchange="applyFilters()">
+                            <option value="all">🌟 All Categories (Soulmates & Rentals)</option>
+                            <option value="soulmate">💖 Soulmate Seekers Only (सच्चा साथी)</option>
+                            <option value="rental">🎭 Event Companions Only (इवेंट साथी)</option>
+                        </select>
+
+                        <!-- Gender & Identity Filter (Inclusive of Trans & Non-Binary) -->
+                        <select id="filter-gender-select" class="sort-select" onchange="applyFilters()">
+                            <option value="all">⚧️ All Gender Identities</option>
+                            <option value="woman">👩 Women (Cis & Trans)</option>
+                            <option value="man">👨 Men (Cis & Trans)</option>
+                            <option value="trans-woman">⚧️ Transgender Women</option>
+                            <option value="trans-man">⚧️ Transgender Men</option>
+                            <option value="non-binary">🌈 Non-Binary / Gender-Fluid</option>
+                        </select>
+
+                        <!-- Indian City Filter -->
+                        <select id="filter-city-select" class="sort-select" onchange="applyFilters()">
+                            <option value="all">📍 All India (Pan-India)</option>
+                            <option value="delhi">Delhi NCR (Gurugram, Noida)</option>
+                            <option value="mumbai">Mumbai & Navi Mumbai</option>
+                            <option value="bengaluru">Bengaluru (Indiranagar, Koramangala)</option>
+                            <option value="kolkata">Kolkata (Park Street, Salt Lake)</option>
+                            <option value="hyderabad">Hyderabad (Hitec City, Jubilee Hills)</option>
+                            <option value="pune">Pune (Koregaon Park, Viman Nagar)</option>
+                            <option value="chennai">Chennai (Besant Nagar, Adyar)</option>
+                            <option value="jaipur">Jaipur (Pink City)</option>
+                            <option value="chandigarh">Chandigarh (Tricity)</option>
+                        </select>
+
+                        <!-- Occasion Filter -->
+                        <select id="filter-occasion-select" class="sort-select" onchange="applyFilters()">
+                            <option value="all">🎉 All Occasions & Specialties</option>
+                            <option value="shaadi">💍 Big Fat Indian Shaadi & Sangeet</option>
+                            <option value="family">🛡️ Family Dinner (Rishta Shield)</option>
+                            <option value="reunion">🎓 College / School Reunion Pride</option>
+                            <option value="corporate">💼 Corporate & Boss Annual Gala</option>
+                            <option value="casual">☕ Casual Coffee & Photography</option>
+                        </select>
+
+                        <!-- Sort By -->
+                        <select id="sort-select" class="sort-select" onchange="applyFilters()">
+                            <option value="featured">✨ Top Recommended</option>
+                            <option value="rating">★ Highest Vibe Rating</option>
+                            <option value="price-low">₹ Price: Low to High</option>
+                            <option value="price-high">₹ Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Active Filter Count Display -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin: 1.2rem 0; color: var(--text-secondary); font-size: 0.9rem;">
+                    <div>Showing <strong id="results-count" style="color: #f8fafc;">12</strong> verified profiles</div>
+                    <div id="active-mode-indicator" class="badge-made-in-india" style="border: none; background: rgba(255,255,255,0.06);">Mode: All In One</div>
+                </div>
+
+                <!-- Profiles Grid -->
+                <div class="companions-grid" id="companions-grid">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- "Rishta Shield" & Desi Backstory Generator -->
+        <section class="backstory-section" id="rishta-shield">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-eyebrow">रिश्तेदार शील्ड • Zero Embarrassment, 100% Pride</div>
+                    <h2 class="section-title">Desi Alibi & Backstory Generator</h2>
+                    <p class="section-subtitle">Attending an Indian family wedding, festive gathering, or alumni reunion? Generate an airtight, culturally authentic backstory to silence nosy relatives and impress your friends.</p>
+                </div>
+
+                <div class="backstory-grid">
+                    <div class="backstory-form">
+                        <div class="form-group">
+                            <label class="form-label">Select The Indian Event Scenario</label>
+                            <select id="story-scenario" class="form-select">
+                                <option value="family">🪔 Family Gathering / Diwali / Rishta Meeting (Stop Parental Pressure)</option>
+                                <option value="shaadi">💍 Big Fat Indian Shaadi & Sangeet (Dancing, Relatives & Photos)</option>
+                                <option value="reunion">🎓 College / School Reunion (Show Up With Style & Pride)</option>
+                                <option value="corporate">💼 Corporate Gala / Annual Dinner (Impress MD, Colleagues & Boss)</option>
+                                <option value="casual">☕ Casual Sunday Brunch & Friends Meetup</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">City Where You "Met"</label>
+                            <select id="story-city" class="form-select">
+                                <option value="bengaluru">Bengaluru (Third Wave Coffee, Indiranagar / Cubbon Park)</option>
+                                <option value="delhi">Delhi NCR (Hauz Khas Social / Khan Market bookstore)</option>
+                                <option value="mumbai">Mumbai (Marine Drive promenade / Bandra Bandstand cafe)</option>
+                                <option value="kolkata">Kolkata (Flurys on Park Street / Indian Coffee House)</option>
+                                <option value="hyderabad">Hyderabad (Jubilee Hills brewery / Tech Hackathon)</option>
+                                <option value="pune">Pune (Koregaon Park art gallery)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">How Long Have You Been "Dating"?</label>
+                            <select id="story-duration" class="form-select">
+                                <option value="4-months">4 Months (Fresh, exciting & respectful)</option>
+                                <option value="8-months">8 Months (Comfortable & well-acquainted)</option>
+                                <option value="1.5-years">1.5 Years (Serious & family-approved vibe)</option>
+                                <option value="2-years">2+ Years (Completely locked-in bond)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Partner's Cover Profession</label>
+                            <select id="story-career" class="form-select">
+                                <option value="tech">Senior Software Architect at Global MNC (Remote / Flexible)</option>
+                                <option value="doctor">Medical Resident / Pediatric Surgeon at Top Hospital</option>
+                                <option value="upsc">Civil Services (UPSC) Aspirant & Public Policy Consultant</option>
+                                <option value="lawyer">Corporate Intellectual Property Lawyer</option>
+                                <option value="designer">High-End Heritage Fashion Designer & Stylist</option>
+                                <option value="ca">Chartered Accountant & Financial Partner at Big 4</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg" id="generate-story-btn" style="width: 100%;">
+                            Generate Desi Alibi 🪄
+                        </button>
+                    </div>
+
+                    <div class="backstory-output">
+                        <div class="output-card">
+                            <div class="output-header">
+                                <span class="output-badge">📜 Your Bulletproof Desi Backstory</span>
+                                <button class="btn btn-sm btn-outline" id="copy-story-btn">Copy Script 📋</button>
+                            </div>
+                            <div class="output-content">
+                                <p id="story-output-text">
+                                    "We met 8 months ago at a cozy rooftop cafe in Indiranagar, Bengaluru. We accidentally took each other's cold brews and struck up a debate about 90s Bollywood music and startup life. We've been inseparable on weekends since. They currently work as a Senior Software Architect at a global MNC, love meeting family, and are thrilled to be my plus-one tonight!"
+                                </p>
+                            </div>
+                            <div class="output-tips">
+                                <strong>💡 Pro-Tip for Family Events:</strong> This prototype keeps the event script visible here for demo planning; no real WhatsApp briefing is sent.
+                            </div>
+                        </div>
+
+                        <!-- Nosy Aunties Q&A Cheat Sheet -->
+                        <div class="rishta-shield-box">
+                            <div class="rishta-shield-title">
+                                <span>🛡️ Nosy Aunties & Relatives Q&A Cheat-Sheet</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Here is how you and your companion can effortlessly answer common intrusive Indian family questions:</p>
+                            
+                            <div class="aunty-qa-list">
+                                <div class="aunty-qa-item">
+                                    <div class="aunty-q">❓ "Beta, shaadi kab kar rahe ho? Agla number tumhara hai!"</div>
+                                    <div class="aunty-a">
+                                        <em>"Aunty ji, abhi hum dono apne career ke golden phase pe focus kar rahe hain. Jab sahi samay aayega, sabse pehle aapko hi mithai khilayenge!"</em> (Said with a sweet, disarming smile).
+                                    </div>
+                                </div>
+                                <div class="aunty-qa-item">
+                                    <div class="aunty-q">❓ "Ladka/Ladki kya karta hai aur CTC package kaisa hai?"</div>
+                                    <div class="aunty-a">
+                                        <em>"Unka high-profile role hai leading multinational firm mein with global projects. Bahut hardworking aur grounded hain!"</em>
+                                    </div>
+                                </div>
+                                <div class="aunty-qa-item">
+                                    <div class="aunty-q">❓ "Colleagues / Boss asking: How did you two meet?"</div>
+                                    <div class="aunty-a">
+                                        <em>"We crossed paths during an industry design symposium in BKC Mumbai, stayed in touch discussing tech innovation, and discovered we share identical passions."</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section (Dual Track) -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-eyebrow">सरल और सुरक्षित • How Bandhan Operates</div>
+                    <h2 class="section-title">Two Distinct Paths Tailored For Your Need</h2>
+                    <p class="section-subtitle">Whether seeking your forever soulmate or renting a companion for a weekend wedding, your dignity, privacy, and safety remain our sacred priority.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <!-- Path A: Soulmate Matchmaking -->
+                    <div class="step-card" style="border-top: 3px solid #ec4899;">
+                        <div class="step-number" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">💖</div>
+                        <h3>Path 1: Saccha Saathi (Soulmate)</h3>
+                        <p>For individuals seeking authentic life partnerships, deep compatibility, and true love without prejudice.</p>
+                        <ul style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.8rem; line-height: 1.6;">
+                            <li>• Filter by identity (Men, Women, Trans, Non-Binary)</li>
+                            <li>• View lifestyle, values, and horoscope vibe alignment</li>
+                            <li>• Send a respectful <em>"Dil Ka Paigaam"</em> (Express Interest)</li>
+                            <li>• Mutual match unlocks safe, private conversation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Path B: Event Companion Rental -->
+                    <div class="step-card" style="border-top: 3px solid #3b82f6;">
+                        <div class="step-number" style="background: linear-gradient(135deg, #3b82f6, #10b981);">🎭</div>
+                        <h3>Path 2: Event Saathi (Rental)</h3>
+                        <p>For individuals not currently looking for marriage, but needing a polite, charismatic plus-one for social events.</p>
+                        <ul style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.8rem; line-height: 1.6;">
+                            <li>• Select occasion (Shaadi, Reunion, Boss Gala)</li>
+                            <li>• Choose Desi dress code (Sherwani, Kurta, Saree, Western)</li>
+                            <li>• Align on your custom alibi backstory before the event</li>
+                            <li>• Pay securely via simulated UPI (GPay/PhonePe/Paytm)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Path C: Zero Drama Guarantee -->
+                    <div class="step-card" style="border-top: 3px solid #f59e0b;">
+                        <div class="step-number" style="background: linear-gradient(135deg, #f59e0b, #10b981);">🛡️</div>
+                        <h3>Path 3: Dignity & Discretion</h3>
+                        <p>Complete peace of mind throughout the entire process.</p>
+                        <ul style="font-size: 0.88rem; color: #cbd5e1; margin-top: 0.8rem; line-height: 1.6;">
+                            <li>• 100% Platonic: Strictly zero physical intimacy for rentals</li>
+                            <li>• Demo verification badge on every profile</li>
+                            <li>• Strict non-disclosure: Your secret is safe with us forever</li>
+                            <li>• 24/7 Safety SOS line and live check-in monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety, Inclusivity & Maryada Charter -->
+        <section class="safety-rules-section" id="maryada">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-eyebrow">संस्कृति और मर्यादा • Code of Dignity & Safety</div>
+                    <h2 class="section-title">Safety & Inclusivity Charter</h2>
+                    <p class="section-subtitle">Bandhan is built on absolute respect, physical safety, gender equality, and zero tolerance for harassment.</p>
+                </div>
+
+                <div class="rules-wrapper">
+                    <!-- Allowed / Safe Behavior -->
+                    <div class="rules-box rules-box-allow">
+                        <div class="rules-header">
+                            <span class="rules-icon">✅</span>
+                            <h3>Encouraged & Celebrated</h3>
+                        </div>
+                        <ul class="rules-list">
+                            <li>
+                                <strong>Warm, Respectful Public Demeanor:</strong> Holding hands for photos, linking arms while entering events, smiling, touching elders' feet, and dancing gracefully at Sangeets.
+                            </li>
+                            <li>
+                                <strong>Full Inclusivity:</strong> Guy, Girl, Transgender Women, Transgender Men, Non-Binary & Queer individuals are treated with equal honor, dignity, and preferred pronouns.
+                            </li>
+                            <li>
+                                <strong>Authentic Family Impressions:</strong> Polite dining etiquette, helping with elders, engaging in charming conversation with relatives, colleagues, and bosses.
+                            </li>
+                            <li>
+                                <strong>Discreet Privacy:</strong> Absolute confidentiality. No personal details or rental contracts are ever shared with third parties.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Strictly Prohibited -->
+                    <div class="rules-box rules-box-deny">
+                        <div class="rules-header">
+                            <span class="rules-icon">🚫</span>
+                            <h3>Strictly Prohibited (Zero Tolerance)</h3>
+                        </div>
+                        <ul class="rules-list">
+                            <li>
+                                <strong>Zero Physical Intimacy:</strong> Companion rentals are 100% platonic. No kissing, overnight hotel room stays, or sexual solicitations. Violations result in immediate police reporting and blacklisting.
+                            </li>
+                            <li>
+                                <strong>No Forced Misgendering or Harassment:</strong> Any transphobic, queerphobic, sexist, casteist, or degrading remarks result in instant SOS intervention.
+                            </li>
+                            <li>
+                                <strong>No Intoxicated Misbehavior:</strong> Both client and companion agree to drink responsibly. Excessive intoxication that causes public embarrassment is forbidden.
+                            </li>
+                            <li>
+                                <strong>No Financial Extortion:</strong> No unauthorized cash demands, tips, or off-platform side-deals. Everything is governed transparently via ₹ INR on Bandhan.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Maryada Pledge Banner -->
+                <div class="maryada-pledge">
+                    <div class="maryada-title">
+                        <span>🇮🇳 The Bandhan Indian Dignity Pledge</span>
+                    </div>
+                    <ul class="maryada-list">
+                        <li>Every profile in this prototype uses illustrative verification data; no government-ID KYC or real-world identity verification is performed.</li>
+                        <li>All companions carry an active SOS emergency trigger on their phones with dedicated local city emergency contacts in Delhi, Mumbai, Bengaluru, Kolkata, Hyderabad, and Pune.</li>
+                        <li>Transgender and queer community members have designated safety guardians and priority incident resolution teams.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="reviews-section" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-eyebrow">सच्चे अनुभव • Real Customer Stories</div>
+                    <h2 class="section-title">Loved Across Indian Cities</h2>
+                    <p class="section-subtitle">Real experiences from people who saved their dignity at family functions or found their soulmate on Bandhan.</p>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">
+                            "I rented Devansh for my cousin's 3-day Punjabi shaadi in Delhi. My entire maternal family was blown away by how humble, articulate, and well-dressed he was. He touched my Dadi's feet and danced at the Sangeet. Not a single relative taunted me about being unmarried this time!"
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">👩</div>
+                            <div>
+                                <div class="review-author-name">Priya Malhotra</div>
+                                <div class="review-author-info">Chartered Accountant • Delhi NCR • Event Saathi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">
+                            "Found my soulmate Rhea through the inclusive Saccha Saathi portal. As a non-binary person working in Bengaluru tech, finding someone who genuinely respects my pronouns and life goals without judgment felt impossible until Bandhan. We are now officially engaged!"
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">🌈</div>
+                            <div>
+                                <div class="review-author-name">Rahul & Rhea</div>
+                                <div class="review-author-info">UX & Legal Tech • Bengaluru • Saccha Saathi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">
+                            "Zoya accompanied me to my company's annual awards gala in BKC Mumbai. My Managing Director and VP spent half an hour talking art and fashion with her. She gave me immense poise, and I walked into the room feeling like a CEO. Worth every single rupee!"
+                        </p>
+                        <div class="review-author">
+                            <div class="review-author-avatar">👨</div>
+                            <div>
+                                <div class="review-author-name">Kunal Shrestha</div>
+                                <div class="review-author-info">Senior Director • Mumbai • Event Saathi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-eyebrow">अक्सर पूछे जाने वाले सवाल • FAQ</div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about our service in India.</p>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How does Bandhan cater to both Soulmates and Companion Rentals?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We believe human connection has different phases. When you are ready for lifelong love, our <strong>Saccha Saathi</strong> matchmaking connects you with verified individuals based on core values, life goals, and mutual attraction across all gender identities. If you are currently focusing on career or personal growth and simply need a companion to ease social pressure at weddings, reunions, or corporate dinners, our <strong>Event Saathi</strong> allows you to book vetted, professional companions with strictly platonic boundaries.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Are Transgender and Non-Binary individuals welcome on Bandhan?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>100% YES!</strong> Bandhan was built from day one to be India's most inclusive platform. We actively welcome Trans Women, Trans Men, Non-Binary, and Queer individuals both as soulmate seekers and professional companions. We maintain a zero-tolerance policy against deadnaming, misgendering, or discrimination, backed by strict legal and safety protocols.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Will anyone at my family wedding or office know I hired a companion?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Never. Your companion will memorize your generated alibi backstory, coordinate outfits (Sherwani, Kurta, Saree, or Formal Suit), and act as your natural dating partner or charming friend. All companions sign a legally binding Non-Disclosure Agreement (NDA).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What payment methods are supported in India?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We support all Indian payment options in ₹ INR, including Google Pay (GPay), PhonePe, Paytm, BHIM UPI, NetBanking (HDFC, ICICI, SBI, Axis), and all major credit/debit cards. Transactions are 100% discrete on bank statements.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is there any physical intimacy allowed for companion rentals?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Absolutely NOT.</strong> Event rentals are 100% platonic companionship. Hand-holding for photos or entering an event arm-in-arm is welcomed to maintain your social appearance, but sexual solicitations or private room stays are strictly illegal on our platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon">🪷</span>
+                        <span class="logo-text">बंधन <small style="font-size: 0.85rem; color: #f59e0b; -webkit-text-fill-color: #f59e0b;">Bandhan</small></span>
+                    </a>
+                    <p style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        India's premier startup platform for genuine soulmates and dignified event companions. Built with pride in India, for India.
+                    </p>
+                    <div style="margin-top: 1rem;">
+                        <span class="badge-made-in-india">🇮🇳 Made in India • Inclusive For All Genders</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#directory" onclick="switchGlobalMode('all')">Browse All Profiles</a></li>
+                        <li><a href="#directory" onclick="switchGlobalMode('soulmate')">Saccha Saathi (Soulmates)</a></li>
+                        <li><a href="#directory" onclick="switchGlobalMode('rental')">Event Saathi (Occasions)</a></li>
+                        <li><a href="#rishta-shield">Rishta Shield Alibi Tool</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Top Indian Cities</h4>
+                    <ul>
+                        <li><a href="#directory" onclick="filterByCity('delhi')">Delhi NCR & Gurugram</a></li>
+                        <li><a href="#directory" onclick="filterByCity('mumbai')">Mumbai & Bandra</a></li>
+                        <li><a href="#directory" onclick="filterByCity('bengaluru')">Bengaluru & Indiranagar</a></li>
+                        <li><a href="#directory" onclick="filterByCity('kolkata')">Kolkata & Salt Lake</a></li>
+                        <li><a href="#directory" onclick="filterByCity('hyderabad')">Hyderabad & Hitec City</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Safety & Legal</h4>
+                    <ul>
+                        <li><a href="#maryada">Code of Maryada (Platonic Pledge)</a></li>
+                        <li><a href="#maryada">Verification Guidelines</a></li>
+                        <li><a href="#maryada">Transgender Safety Protocol</a></li>
+                        <li><a href="#maryada">Emergency SOS (24/7 Helpline)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Bandhan Technologies Pvt. Ltd. • All Rights Reserved • Made in India 🇮🇳</div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#maryada">Privacy Policy</a>
+                    <a href="#maryada">Terms of Dignity</a>
+                    <a href="#maryada">Safety SOS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Event Saathi Rental) -->
+    <div class="modal-overlay" id="booking-modal" role="dialog" aria-labelledby="soulmate-name" aria-labelledby="modal-companion-name">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-companion-name">Rent Event Companion</h3>
+                    <p id="modal-companion-subtitle" style="font-size: 0.85rem; color: var(--text-secondary);">Profile Verification • Demo</p>
+                </div>
+                <button type="button" class="modal-close" aria-label="Close booking dialog" onclick="closeBookingModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="booking-summary-box" style="display: flex; gap: 1rem; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.2rem;">
+                    <img src="" id="modal-avatar" alt="Companion Avatar" style="width: 60px; height: 60px; border-radius: var(--radius-full); object-fit: cover; border: 2px solid var(--rose-primary);">
+                    <div>
+                        <h4 id="modal-summary-name" style="font-size: 1.1rem; color: #ffffff;">Aarav Singhania</h4>
+                        <div id="modal-summary-tags" style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.2rem;"></div>
+                        <div class="price-inr" id="modal-summary-rate" style="font-size: 1.15rem; margin-top: 0.3rem;"><span class="currency-symbol">₹</span>1,499 <small>/ event</small></div>
+                    </div>
+                </div>
+
+                <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+                    <div class="booking-form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Occasion / Event Type</label>
+                            <select id="booking-occasion" class="form-select" required>
+                                <option value="shaadi">💍 Big Fat Indian Shaadi / Sangeet</option>
+                                <option value="family">🪔 Family Gathering (Rishta Shield)</option>
+                                <option value="reunion">🎓 College / School Reunion Pride</option>
+                                <option value="corporate">💼 Corporate Annual Gala / Boss Dinner</option>
+                                <option value="casual">☕ Casual Weekend / Cafe Meet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">City & Venue</label>
+                            <input type="text" id="booking-venue" class="form-input" placeholder="e.g. Taj Lands End, Bandra Mumbai" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Event Date</label>
+                            <input type="date" id="booking-date" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Duration Package</label>
+                            <select id="booking-duration-select" class="form-select" onchange="calculateTotalCost()">
+                                <option value="1">Half Day / Dinner (4 Hours) — Base Rate</option>
+                                <option value="2">Full Evening Gala / Sangeet (8 Hours) — 1.8x Rate</option>
+                                <option value="3">Full 2-Day Indian Shaadi Package — 3x Rate</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Dress Code Alignment</label>
+                        <select id="booking-attire" class="form-select">
+                            <option value="traditional">Traditional Indian (Sherwani / Silk Kurta / Saree / Lehenga)</option>
+                            <option value="indo-western">Indo-Western Fusion / Bandhgala</option>
+                            <option value="formal">Sharp Western Formal (Dark Tuxedo / Cocktail Gown)</option>
+                            <option value="smart-casual">Smart Casual / Chic Cafe Attire</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Special Role Instructions & Backstory Details</label>
+                        <textarea id="booking-notes" class="form-input" style="height: 75px;" placeholder="Tell your companion what to emphasize (e.g. 'Touch Dadi's feet, pretend we met in Bengaluru tech, talk about startup funding in front of my boss')."></textarea>
+                    </div>
+
+                    <!-- Simulated Indian UPI Payment Selector -->
+                    <div class="form-group">
+                        <label class="form-label" style="display: flex; justify-content: space-between;">
+                            <span>Payment Method (Simulated ₹ INR Checkout)</span>
+                            <span style="color: #10b981; font-weight: 700; font-size: 0.8rem;">🔒 Demo Checkout</span>
+                        </label>
+                        <div class="upi-methods-grid">
+                            <div class="upi-method-card selected" onclick="selectUpiMethod(this, 'gpay')">
+                                <span class="upi-method-icon">🟢</span>
+                                <span class="upi-method-name">Google Pay</span>
+                            </div>
+                            <div class="upi-method-card" onclick="selectUpiMethod(this, 'phonepe')">
+                                <span class="upi-method-icon">🟣</span>
+                                <span class="upi-method-name">PhonePe</span>
+                            </div>
+                            <div class="upi-method-card" onclick="selectUpiMethod(this, 'paytm')">
+                                <span class="upi-method-icon">🔵</span>
+                                <span class="upi-method-name">Paytm UPI</span>
+                            </div>
+                            <div class="upi-method-card" onclick="selectUpiMethod(this, 'card')">
+                                <span class="upi-method-icon">💳</span>
+                                <span class="upi-method-name">NetBanking</span>
+                            </div>
+                        </div>
+                        <input type="text" id="upi-id-input" class="form-input" placeholder="Demo UPI ID (optional)" >
+                    </div>
+
+                    <!-- Code of Maryada Checkbox -->
+                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 0.9rem; margin-bottom: 1.2rem;">
+                        <label style="display: flex; gap: 0.6rem; align-items: flex-start; cursor: pointer; font-size: 0.84rem; color: #cbd5e1;">
+                            <input type="checkbox" id="maryada-agreement" required style="margin-top: 3px;">
+                            <span>I solemnly agree to the <strong>Bandhan Code of Maryada</strong>. I understand that this companion rental is 100% platonic, respectful, and zero physical intimacy is permitted.</span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary);">Total Payable:</div>
+                            <div class="price-inr" id="modal-total-display"><span class="currency-symbol">₹</span>1,499</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg" id="confirm-booking-btn">
+                            Confirm & Reserve Event Saathi 🇮🇳
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soulmate Connect Modal (Dil Ka Paigaam) -->
+    <div class="modal-overlay" id="soulmate-modal" role="dialog" aria-labelledby="dossier-name">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h3>💖 Saccha Saathi — Express Interest</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Send a respectful "Dil Ka Paigaam" for lifelong companionship</p>
+                </div>
+                <button type="button" class="modal-close" aria-label="Close connection dialog" onclick="closeSoulmateModal()">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="soulmate-connect-box">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <img src="" id="soulmate-avatar" alt="Soulmate Avatar" style="width: 65px; height: 65px; border-radius: var(--radius-full); object-fit: cover; border: 2px solid #ec4899;">
+                        <div>
+                            <h4 id="soulmate-name" style="font-size: 1.15rem; color: #ffffff;">Name</h4>
+                            <div id="soulmate-identity-badge" style="margin-top: 0.2rem;"></div>
+                            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem;" id="soulmate-city-profession">City • Profession</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.8rem;">
+                        <span style="font-size: 0.85rem; color: #cbd5e1;">Lifestyle & Vibe Alignment:</span>
+                        <span class="compatibility-pill" id="soulmate-vibe-score">✨ 97% Compatibility</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Personal Introductory Note (Dil Ka Paigaam)</label>
+                    <textarea id="soulmate-message" class="form-input" style="height: 100px;" placeholder="Express what resonated with you from their profile (e.g. shared values, love for music, city life, family dreams)..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Your Preferred Date Idea</label>
+                    <select id="soulmate-first-date" class="form-select">
+                        <option value="coffee">Cozy Specialty Coffee & Long Conversation</option>
+                        <option value="art">Art Gallery / Museum Walk & Snacks</option>
+                        <option value="bookstore">Browsing Indie Bookstores & Chai</option>
+                        <option value="park">Quiet Walk in City Nature Park (Cubbon / Lodhi / Marine Drive)</option>
+                    </select>
+                </div>
+
+                <div style="background: rgba(236, 72, 153, 0.08); border: 1px solid rgba(236, 72, 153, 0.25); border-radius: var(--radius-md); padding: 0.85rem; margin-bottom: 1.2rem; font-size: 0.84rem; color: #fbcfe8;">
+                    <strong>Safe Haven Policy:</strong> Your contact details remain 100% private until both of you mutually accept each other's connection request.
+                </div>
+
+                <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="sendDilKaPaigaam()">
+                    Send Dil Ka Paigaam (Express Interest) 💌
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Dossier Profile Modal -->
+    <div class="modal-overlay" id="profile-modal" role="dialog" aria-modal="true">
+        <div class="modal-container profile-modal-container">
+            <div class="modal-header">
+                <div>
+                    <h3 id="dossier-name">Full Profile Dossier</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Background & Etiquette • Demo Credentials</p>
+                </div>
+                <button type="button" class="modal-close" aria-label="Close profile dialog" onclick="closeProfileModal()">✕</button>
+            </div>
+
+            <div class="modal-body" id="dossier-body">
+                <!-- Injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- My Connections & Bookings Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>🔔 My Connections & Bookings</h3>
+            <button class="cart-close" onclick="closeCartDrawer()">✕</button>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <!-- Injected dynamically -->
+        </div>
+        <div class="cart-footer">
+            <button class="btn btn-primary" style="width: 100%;" onclick="printAlibiPass()">
+                Print / Save Event Pass 📄
+            </button>
+        </div>
+    </aside>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Main JavaScript Logic -->
+        <script src="app.js" defer></script>
+</body>
+</html>

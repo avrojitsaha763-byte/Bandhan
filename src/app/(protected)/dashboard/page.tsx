@@ -1,0 +1,5 @@
+import Link from 'next/link'
+import { SiteShell } from '@/components/site-shell'
+import { requireUser } from '@/lib/auth/guards'
+import { redirect } from 'next/navigation'
+export default async function Dashboard() { const { supabase, userId } = await requireUser(); const { data: profile } = await supabase.from('profiles').select('display_name, role').eq('id', userId).single(); if (!profile) redirect('/onboarding'); const { count } = await supabase.from('bookings').select('*', { count: 'exact', head: true }).eq('customer_id', userId); return <SiteShell><main className="shell dashboard"><div className="eyebrow">Your space</div><h1>Namaste, {profile.display_name}.</h1><div className="grid"><section className="card"><div className="stat">{count || 0}</div><p>Your bookings</p><Link href="/discover">Explore people</Link></section><section className="card"><div className="stat">{profile.role}</div><p>Current account role</p>{profile.role === 'provider' && <Link href="/provider">Provider workspace</Link>}</section><section className="card"><div className="stat">Safe</div><p>Payments are not connected in this starter.</p></section></div></main></SiteShell> }
